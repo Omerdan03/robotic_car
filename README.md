@@ -1,6 +1,6 @@
 # robotic_car_GUI
 
-robotic_car_GUI is a python project for Xjet programming exercise.
+robotic_car_GUI is a python programming exercise.
 It contains a main.py script that create a window for show and control 1-d robotic car. 
 
 # Installation guide

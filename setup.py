@@ -8,7 +8,7 @@ with open(os.path.normpath(os.path.join(__file__, '../VERSION'))) as f:
 
 setup(name='robotic_car_GUI',
       version=__version__,
-      description='A repo for Programming exercise Xjet',
+      description='A repo for Programming exercise about building robotic car on 1d grid',
       author='Omer Danziger',
       author_email='Omerdan03@gmail.com',
       packages=find_namespace_packages(),
