@@ -108,9 +108,11 @@ def main():
 
             car.is_active = not car.is_active
 
-        # Update car position and speed texts
+        # Update car position and speed texts (speed updates only in advance mode)
         window['car_pos'].update(car.pos)
-        window['car_speed'].update(car.speed)
+
+        if args.mode == 'advance':
+            window['car_speed'].update(car.speed)
 
         # Print car stats for debugging
         print(car) if args.debug else None
@@ -125,6 +127,7 @@ def main():
         window.refresh()
 
     window.close()
+
 
 if __name__ == '__main__':
     main()
