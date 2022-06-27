@@ -8,6 +8,7 @@ class Car:
     This class contains all the needed physics about our car
     """
 
+    # Those params only relevant on advance mode
     drag_force = 0.5
     accelerating = 3
     MAX_SPEED = 10

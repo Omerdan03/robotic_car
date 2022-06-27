@@ -75,7 +75,7 @@ def main():
     while True:
         event, values = window.read(timeout=50)
 
-        # Draw car figure on the board (if there is old figure delete it)
+        # Draw car figure on the board (if there is an old figure delete it)
         if car_id != -1:
             field.delete_figure(car_id)
         car_id = field.draw_image(filename=CAR_IMG, location=(convert_pos_to_pixel(car.pos), FIELD_Y))
@@ -87,11 +87,14 @@ def main():
             pass  # todo add pop-up when inserted invalid number
 
         if args.mode == 'simple':
-            # Get car position from target_pos input
+            # Get car speed from car_speed input
             try:
                 car.speed = float(values['car_speed'])
             except ValueError:
                 pass  # todo add pop-up when inserted invalid number
+        else:
+            # Get car speed from physics
+            window['car_speed'].update(car.speed)
 
         # Change car activation according to the activation button
         if event == 'activation_button':
@@ -108,11 +111,8 @@ def main():
 
             car.is_active = not car.is_active
 
-        # Update car position and speed texts (speed updates only in advance mode)
+        # Update car position
         window['car_pos'].update(car.pos)
-
-        if args.mode == 'advance':
-            window['car_speed'].update(car.speed)
 
         # Print car stats for debugging
         print(car) if args.debug else None
