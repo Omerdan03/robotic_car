@@ -90,6 +90,10 @@ def main():
             # Get car speed from car_speed input
             try:
                 car.speed = float(values['car_speed'])
+                # todo deal with negative car speeds
+                # if car.speed < 0:
+                #     car.speed = -car.speed
+                #     window['car_speed'].update(car.speed)
             except ValueError:
                 pass  # todo add pop-up when inserted invalid number
         else:
@@ -98,12 +102,12 @@ def main():
 
         # Change car activation according to the activation button
         if event == 'activation_button':
-            if car.is_active:
+            if car.is_active:  # change from Moving to Stopping
                 window['activation_button'].update('MOVE')
                 window['target_pos'].update(disabled=False)
                 if args.mode == 'simple':
                     window['car_speed'].update(disabled=False)
-            else:
+            else:  # change from Stopping to Moving
                 window['activation_button'].update('STOP')
                 window['target_pos'].update(disabled=True)
                 if args.mode == 'simple':
