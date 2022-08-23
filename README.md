@@ -20,6 +20,9 @@ After the installation of the project, write robotic_car inside the terminal and
 robotic_car
 ```
 
+![GUI window](screen_shot/main_screen.png)
+
+
 For advance mode type robotic_car -mode advance command and the GUI that will open will implement advance physics 
 
 ```bash
